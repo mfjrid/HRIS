@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('gender')->nullable();
+            $table->string('birth')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('photo')->nullable();
+            $table->unsignedBigInteger('team_id');
+            $table->unsignedBigInteger('role_id');
+            $table->boolean('is_verified')->default(false);
+            $table->timestamp('verified_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
