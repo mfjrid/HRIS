@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Company::factory(10)->create();
         \App\Models\Team::factory(30)->create();
         \App\Models\Role::factory(10)->create();
-        \App\Models\Responsibility::factory(10)->create();
+        \App\Models\Responsibility::factory(200)->create();
+        \App\Models\Employee::factory(200)->create();
     }
 }
